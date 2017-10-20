@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Recém Nascidos</ion-title>
+    <ion-buttons end>
+      <button ion-button color="primary" (click)="onAddRecem()">Adicionar</button>
+    </ion-buttons>  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item ion-item *ngFor="let recemNascido of recemNascidos | async" (click)="onEditRecem(recemNascido, recemNascido.$key)">
+      <ion-icon name="paw" item-left></ion-icon>
+      <strong>Número Mãe: </strong> {{ recemNascido.numeroMae }}
+      <strong> Sexo: </strong> {{ recemNascido.sexo }}
+      <br>
+      <strong> Obs: </strong> {{ recemNascido.observacao }}
+      <strong> Data Nasc: </strong> {{ recemNascido.dataNasc | date: 'dd/MM/yyyy' }}
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title> Total de Recém Nascidos: {{qtdRecem}} </ion-title>
+  </ion-toolbar>
+</ion-footer>
+

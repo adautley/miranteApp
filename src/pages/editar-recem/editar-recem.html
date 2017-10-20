@@ -1,0 +1,39 @@
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Editar Recém</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <h1 text-center>Editar Recém</h1>
+  
+    <form [formGroup]="recemForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+  
+      <ion-item>
+        <ion-icon name="clipboard" item-left></ion-icon>
+        <ion-input type="text" [(ngModel)]="Recem.numeroMae" placeholder="Número da Mãe" formControlName="numeroMae"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="create" item-left></ion-icon>
+        <ion-input type="text" [(ngModel)]="Recem.observacao" placeholder="Observação" formControlName="observacao"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="clipboard" item-left></ion-icon>
+        <ion-input type="text" [(ngModel)]="Recem.dataNasc" placeholder="Data de Nascimento" formControlName="dataNasc"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="transgender" item-left></ion-icon>
+        <ion-input type="text" [(ngModel)]="Recem.sexo" placeholder="Sexo" formControlName="sexo"></ion-input>
+      </ion-item>   
+
+      <br>
+      <button ion-button full type="submit">Editar Novilha</button>
+  
+    </form>
+  </ion-content>

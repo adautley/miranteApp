@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Adicionar Novo Touro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h1 text-center>Adicionar Touro</h1>
+
+  <form [formGroup]="touroForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-icon name="clipboard" item-left></ion-icon>
+      <ion-input type="text" placeholder="Número" formControlName="numero"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="create" item-left></ion-icon>
+      <ion-input type="text" placeholder="Observação" formControlName="observacao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pricetag" item-left></ion-icon>
+      <ion-input type="text" placeholder="Valor" formControlName="valor"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button full type="submit">Adicionar Touro</button>
+
+  </form>
+
+</ion-content>

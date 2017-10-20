@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Editar Novilha</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 text-center>Editar Novilha</h1>
+
+  <form [formGroup]="novilhaForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-icon name="clipboard" item-left></ion-icon>
+      <ion-input type="text" [(ngModel)]="Novilha.numero" placeholder="Número" formControlName="numero"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="create" item-left></ion-icon>
+      <ion-input type="text" [(ngModel)]="Novilha.observacao" placeholder="Observação" formControlName="observacao"></ion-input>
+    </ion-item>
+    <br>
+
+    <button ion-button full type="submit">Editar Novilha</button>
+  </form>
+  <h2 text-center>Filhos</h2>
+  <ion-list>
+    <ion-item ion-item *ngFor="let cria of crias | async">
+      <ion-icon name="paw" item-left></ion-icon>
+      <strong> Sexo: </strong>{{ cria.sexo }}
+      <strong> Obs: </strong>{{ cria.observacao }}
+      <br>
+      <strong> Nascimento: </strong>{{ cria.dataNasc }}
+    </ion-item>
+  </ion-list>
+
+  
+</ion-content>

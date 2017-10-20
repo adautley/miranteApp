@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      Mirante App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+  
+
+  <button ion-button block (click)="onNovilhas()">Novilhas</button>
+  <button ion-button block (click)="onTouros()">Touros</button>
+  <button ion-button block (click)="onRecemNascidos()">Recém Nascidos</button>
+
+  
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title> Total de Gados: {{Soma}} </ion-title>
+  </ion-toolbar>
+</ion-footer>

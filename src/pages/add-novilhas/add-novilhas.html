@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Adicionar Nova Novilha</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h1 text-center>Adicionar Novilha</h1>
+
+  <form [formGroup]="novilhaForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-icon name="clipboard" item-left></ion-icon>
+      <ion-input type="text" placeholder="Número" formControlName="numero"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="create" item-left></ion-icon>
+      <ion-input type="text" placeholder="Observação" formControlName="observacao"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button full type="submit">Adicionar Novilha</button>
+    
+
+  </form>
+  <button ion-button full (click)="onAddVarias()">Adicionar Várias Novilhas</button>
+</ion-content>

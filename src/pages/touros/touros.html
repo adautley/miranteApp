@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Touros</ion-title>
+    <ion-buttons end>
+      <button ion-button color="primary" (click)="onAddTouro()">Adicionar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item ion-item *ngFor="let touro of touros | async" (click)="onEditTouro(touro, touro.$key)">
+      <ion-icon name="paw" item-left></ion-icon>
+      <strong>Número: </strong>{{ touro.numero }} - 
+      <strong>Obs: </strong>{{ touro.observacao }}
+      <br>
+      <strong>Valor: </strong>{{ touro.valor }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title> Total de Touros: {{qtdTouros}} </ion-title>
+  </ion-toolbar>
+</ion-footer>

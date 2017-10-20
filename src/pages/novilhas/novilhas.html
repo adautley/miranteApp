@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Novilhas</ion-title>
+    <ion-buttons end>
+     <button ion-button color="primary" (click)="onAddNovilha()">Adicionar</button>
+    </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item ion-item *ngFor="let novilha of novilhas | async" (click)="onEditNovilha(novilha, novilha.$key)">
+      <ion-icon name="paw" item-left></ion-icon>
+      <strong> Número: </strong>{{ novilha.numero }}
+      <strong> Obs: </strong>{{ novilha.observacao }}
+      <br>
+      <strong> Qtd. crias: </strong>{{ novilha.qtdCrias }}
+      <strong> Última Cria: </strong>{{ novilha.ultCria | date: 'dd/MM/yyyy' }}
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title> Total de Novilhas: {{qtdNovilhas}} </ion-title>
+  </ion-toolbar>
+</ion-footer>

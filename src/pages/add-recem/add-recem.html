@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Adicionar Recém Nascido</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h1 text-center>Adicionar Recém Nascido</h1>
+
+  <form [formGroup]="recemForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-icon name="pricetag" item-left></ion-icon>
+      <ion-input type="text" placeholder="Número da Mãe" formControlName="numeroMae"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="create" item-left></ion-icon>
+      <ion-input type="text" placeholder="Observação" formControlName="observacao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Data: </ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY" formControlName="dataNasc" [(ngModel)]="dataNasc" monthNames="janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro"
+        monthShortNames="jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="transgender" item-left></ion-icon>
+      <ion-input type="text" placeholder="Sexo" formControlName="sexo"></ion-input>
+    </ion-item>    
+    <br>
+    <button ion-button full type="submit">Adicionar Recém Nascido</button>
+
+  </form>  
+
+</ion-content>
